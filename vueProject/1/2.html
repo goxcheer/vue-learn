@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.js"></script>
+    <style>
+        .red{
+            color: red;
+        }
+        .color{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+        <div id="view">
+             <!--<h1 v-bind:class="'color'" v-bind:id="'username'">goxcheer</h1>-->
+            <h1 :class="'color'" :id="'username'">goxcheer</h1>
+        </div>
+        <script>
+            var myvue = new Vue({
+                el:'#view',
+                data:{
+                    color:'red'
+                }
+            });
+        </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.js"></script>
+    <style>
+        .c1{
+            color: red;
+        }
+        .c2{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+        <div id="view">
+            <h3 v-text="n"></h3>
+            <h3 :class="'c'+n">goxcheer</h3>
+            <input type="text" v-model="n"><br>
+            <input type="radio" value="1" v-model="n">红
+            <input type="radio" value="2" v-model="n">绿
+        </div>
+        <script>
+            var myvue = new Vue({
+                el:'#view',
+                data:{
+                    n:'1'
+                }
+            });
+        </script>
+</body>
+</html>

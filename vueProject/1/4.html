@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+        <div id="username">
+            <h1>{{username}}</h1>
+            <h2 v-text="username"></h2>
+            <h3 v-html="username"></h3>
+        </div>
+        <script>
+            var myvue = new Vue({
+                el:'#username',
+                data:{
+                    username:'<h1 style="color: red">goxcheer</h1>'
+                }
+            });
+        </script>
+</body>
+</html>
