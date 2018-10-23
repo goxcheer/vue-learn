@@ -7,14 +7,18 @@
 </head>
 <body>
         <div id="view">
-            <h1>{{username}}</h1>
+            <h1>计数器的值:{{counter}}</h1>
+            <input type="button" value="点我+1" @click="counter++">
         </div>
         <script>
             var myvue = new Vue({
                 el:'#view',
                 data:{
-                    username:'goxcheer'
+                    counter:1
                 }
+            });
+            myvue.$watch('counter',function(n,o){
+                alert('计数器由'+o+'变为'+n);
             });
         </script>
 </body>

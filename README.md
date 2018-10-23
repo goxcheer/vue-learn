@@ -6,3 +6,5 @@
 5. 内容与属性中使用javascript表达式
 6. vue实用计算属性computed
 7. ECMAScrpit6简化写法
+8. watch监听事件属性
+8. watch监听事件属性实现购物车监听
