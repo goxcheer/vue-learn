@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+        <div id="view">
+            <li v-for="c in comments">{{c.comment}}</li>
+            <textarea v-model="currentComment"></textarea><br>
+            <button v-on:click="addComment('pre')">提交到前面</button>
+            <button v-on:click="addComment('end')">提交到后面</button><br>
+            <button v-on:click="del('first')">删除最前面</button>
+            <button v-on:click="del('last')">删除最后面</button>
+        </div>
+        <script>
+            var myvue = new Vue({
+                el:'#view',
+                data:{
+                    currentComment:'',
+                    comments:[
+                        {comment:'goxcheer'},
+                        {comment:'hehe'}
+                    ]
+                },
+                methods:{
+                    addComment(v){
+                        var comment = {comment:this.currentComment};
+                        switch (v) {
+                            case 'pre':
+                                this.comments.unshift(comment);
+                                break;
+                            case 'end':
+                                this.comments.push(comment);
+                                break;
+                        }
+
+                        this.currentComment = '';
+                    },
+                    del(v){
+                        switch (v) {
+                            case 'first':
+                                this.comments.shift();
+                                break;
+                            case 'last':
+                                this.comments.pop();
+                                break;
+                        }
+                    }
+                }
+            });
+        </script>
+</body>
+</html>

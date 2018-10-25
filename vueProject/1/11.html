@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+        <div id="view">
+            <h3 :style="{color:'red',fontSize:size+'px'}">{{username}}</h3>
+            <h3 :style="style">{{sex}}</h3>
+            <input type="number" v-model="size">
+        </div>
+        <script>
+            var myvue = new Vue({
+                el:'#view',
+                data:{
+                    username:'goxcheer',
+                    sex:'男',
+                    size:50,
+                    style:{
+                        color:'green',
+                        fontSize:'60px'
+                    }
+                }
+            });
+        </script>
+</body>
+</html>

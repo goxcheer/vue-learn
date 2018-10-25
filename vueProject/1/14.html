@@ -4,24 +4,19 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="../vue.js"></script>
-    <style>
-        .color{
-            color: red;
-        }
-        .font{
-            font-size: 50px;
-        }
-    </style>
 </head>
 <body>
         <div id="view">
-            <span :class="{color:'color',font:'font'}">{{username}}</span>
+            <h1 v-if="status">{{username}}</h1>
+            <h1 v-show="status">{{sex}}</h1>
         </div>
         <script>
             var myvue = new Vue({
                 el:'#view',
                 data:{
-                    username:'goxcheer'
+                    username:'goxcheer',
+                    sex:'男',
+                    status:false
                 }
             });
         </script>

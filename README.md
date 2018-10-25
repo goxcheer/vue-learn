@@ -8,3 +8,16 @@
 7. ECMAScrpit6简化写法
 8. watch监听事件属性
 8. watch监听事件属性实现购物车监听
+9. 使用object控制class属性
+10. class中使用应用表达式，三目
+11. 使用vue控制style样式属性
+12. v-if在注册网站中的使用
+13. 使用key唯一令牌解决表单值混乱的问题
+14. v-show和v-if的区别
+15. v-for操作json
+16. v-for操作对象,item和key的使用
+17. v-for与computer结合使用，js的filter属性的使用
+18. 网站留言结合push方法的使用
+19. 相应的pop，shift，unshift的使用
+20. splice原生js删除评论
+21. vue变异方法sort与reverse

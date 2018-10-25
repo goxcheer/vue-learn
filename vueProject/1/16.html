@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+        <div id="view">
+            <li v-for="item,key,index in user">
+               {{index}} - {{key}} - {{item}}
+            </li>
+            <table border=1 width=100%">
+                <tr v-for="v in 100">
+                    <td>{{v}}</td>
+                </tr>
+            </table>
+        </div>
+        <script>
+            var myvue = new Vue({
+                el:'#view',
+                data:{
+                    user:{
+                        username:'goxcheer',
+                        password:'123456',
+                        status:1
+                    }
+                }
+            });
+        </script>
+</body>
+</html>

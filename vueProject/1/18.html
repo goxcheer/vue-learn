@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+        <div id="view">
+            <li v-for="c in comments">{{c.comment}}</li>
+            <textarea v-model="currentComment"></textarea><br>
+            <button v-on:click="addComment()">提交</button>
+        </div>
+        <script>
+            var myvue = new Vue({
+                el:'#view',
+                data:{
+                    currentComment:'',
+                    comments:[
+                        {comment:'goxcheer'},
+                        {comment:'hehe'}
+                    ]
+                },
+                methods:{
+                    addComment(){
+                        var comment = {comment:this.currentComment};
+                        this.comments.push(comment);
+                        this.currentComment = '';
+                    }
+                }
+            });
+        </script>
+</body>
+</html>

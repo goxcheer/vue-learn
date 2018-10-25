@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.js"></script>
+    <style>
+        .red{
+            color: red;
+        }
+        .green{
+            color:green;
+        }
+    </style>
+</head>
+<body>
+        <div id="view">
+            <li v-for="v in json">
+                <span :class="v.status? 'green' : 'red'">{{v.title}}</span>
+                <button v-if="v.status" v-on:click="changeStatus(v)">开始</button>
+                <button v-if="!v.status" v-on:click="changeStatus(v)">结束</button>
+            </li>
+        </div>
+        <script>
+            var myvue = new Vue({
+                el:'#view',
+                data:{
+                    json:[
+                        {title:'goxcheer',status:true},
+                        {title:'qigaoxiang',status:true}
+                    ]
+                },
+                methods:{
+                    changeStatus:function(v){
+                        v.status = !v.status;
+                    }
+                }
+            });
+        </script>
+</body>
+</html>

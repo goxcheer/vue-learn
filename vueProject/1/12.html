@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+        <div id="view">
+            <input type="checkbox" v-on:click="changeFlag(flag)">同意协议<br>
+            <span v-if="flag==false">请先同意协议</span>
+            <button v-else>注册</button>
+        </div>
+        <script>
+            var myvue = new Vue({
+                el:'#view',
+                data:{
+                    flag:false
+                },
+                methods:{
+                    changeFlag:function(flag){
+                        this.flag = !flag;
+                    }
+                }
+            });
+        </script>
+</body>
+</html>

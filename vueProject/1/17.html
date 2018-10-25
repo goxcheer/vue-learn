@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+        <div id="view">
+            <li v-for="v in status">
+                {{v.name}} - {{v.sex}}
+            </li>
+            {{type}}
+            <input type="radio" v-model="type" value="boy">男
+            <input type="radio" v-model="type" value="girl">女
+        </div>
+        <script>
+            var myvue = new Vue({
+                el:'#view',
+                data:{
+                    type:'all',
+                    user:[
+                        {name:'张三',sex:'boy'},
+                        {name:'李四',sex:'girl'},
+                        {name:'王五',sex:'girl'},
+                        {name:'赵六',sex:'boy'}
+                    ]
+                },
+                computed:{
+                    status(){
+                        if (this.type == 'all') {
+                            return this.user;
+                        } else {
+                            return this.user.filter((v)=>{
+                                return v.sex == this.type;
+                            });
+                        }
+                    }
+                }
+            });
+        </script>
+</body>
+</html>
