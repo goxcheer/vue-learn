@@ -21,3 +21,15 @@
 19. 相应的pop，shift，unshift的使用
 20. splice原生js删除评论
 21. vue变异方法sort与reverse
+22. 变异方法filter结合正则表达式RegExp实现search搜索功能
+23. 时间修饰符$event与prevent禁止事件的简化写法在form表单的使用
+24. 事件修饰符stop，self
+25. 事件修饰符once
+26. 键盘修饰符
+27. 鼠标事件处理修饰符
+28. 使用vue控制input,text内容
+29. 使用vue控制radio单选框
+30. 使用vue控制select
+31. 表单控件处理之表单修饰符number,trim，lazy
+
+

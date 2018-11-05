@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+        <div id="view">
+            <input type="text" @click.left="fun" v-model="username">
+            <input type="text" @click.right="fun" v-model="username">
+        </div>
+        <script>
+            var myvue = new Vue({
+                el:'#view',
+                data: {
+                    username: ''
+                },
+                methods:{
+                    fun(){
+                        alert(this.username);
+                    }
+                }
+            });
+        </script>
+</body>
+</html>

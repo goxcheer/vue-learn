@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+        <div id="view">
+            <form @submit.prevent="post" action="">
+                <input type="text" v-model="username">
+                {{date}}<br>
+                <button>提交</button>
+            </form>
+        </div>
+        <script>
+            var myvue = new Vue({
+                el:'#view',
+                data:{
+                    username:'goxcheer',
+                    date:new Date()
+                },
+                methods:{
+                    post(){
+                        alert('hehe');
+                    }
+                }
+            });
+        </script>
+</body>
+</html>

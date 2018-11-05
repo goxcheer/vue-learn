@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+        <div id="view">
+            <input type="number" v-model.number="click">
+            <input type="text" v-model.trim.lazy="username">
+        </div>
+        <script>
+            var myvue = new Vue({
+                el:'#view',
+                data:{
+                    click:100,
+                    username:'goxcheer'
+                },
+                watch:{
+                    'click':function(n,o){
+                        console.log(typeof (n));
+                    },
+                    'username':function(n,o){
+                        console.log(n.length);
+                    },
+
+                }
+            });
+        </script>
+</body>
+</html>

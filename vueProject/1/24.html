@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+        <div id="view">
+            <div @click.self="box">
+            <a href="www.baidu.com" @click.prevent="show">{{username}}</a>
+               <!-- <a href="www.baidu.com" @click.prevent.stop="show">{{username}}</a>-->
+            </div>
+        </div>
+        <script>
+            var myvue = new Vue({
+                el:'#view',
+                data:{
+                    username:'goxcheer'
+                },
+                methods:{
+                    box(){
+                        alert('box');
+                    },
+                    show(){
+                        alert(this.username);
+                    }
+                }
+            });
+        </script>
+</body>
+</html>

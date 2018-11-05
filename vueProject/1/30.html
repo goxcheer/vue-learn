@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+        <div id="view">
+            <select v-model="cid">
+                <option value="0">请选择城市</option>
+                <option value="1">武汉</option>
+                <option value="2">深圳</option>
+            </select>
+        </div>
+        <script>
+            var myvue = new Vue({
+                el:'#view',
+                data:{
+                    cid:'1'
+                }
+            });
+        </script>
+</body>
+</html>
