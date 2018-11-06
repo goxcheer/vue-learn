@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+        <div id="viewCMS">
+            <view-slide></view-slide>
+            <view-News></view-News>
+        </div>
+        <script>
+            Vue.component("viewSlide",{
+               template:'<h1>haha</h1>'
+            })
+             new Vue({
+                el:'#viewCMS',
+                data:{
+                    username:'goxcheer'
+                },
+                components:{
+                    viewNews:{
+                        template: '<h1>你好，vue</h1>'
+                    }
+                }
+            });
+        </script>
+</body>
+</html>

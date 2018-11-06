@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+        <div id="viewCMS">
+            <view-News :show-Del-Button="1" :news="news"></view-News><br>
+        </div>
+        <script type="text/x-template" id="temp1">
+                <div>
+                    {{showDelButton}}
+                    <li v-for="(v,k) in news">
+                        {{v.title}}
+                        <button @click="del(k)" v-if="showDelButton">删除</button>
+                    </li>
+                </div>
+        </script>
+        <script>
+            var viewNews = {
+                template: '#temp1',
+                props: {
+                       showDelButton:{
+                            type:[Boolean,Number],
+                            /*default:false*/
+                           required:true
+                        },
+                      /* showDelButton:{
+                         validator(v){
+                             return v===1 || v===0;
+                         }
+                       },*/
+                       news:{
+                            type: Array,
+                           default: [
+                               {title:'hehe'}
+                               ]
+                       }
+                    }
+                ,
+                data(){
+                    return {
+
+                    };     //每个子组件返回独立的子组件数据
+                },
+                methods:{
+                    del(k){
+                        this.news.splice(k,1);
+                    }
+                }
+            }
+             new Vue({
+                el:'#viewCMS',
+                 components:{viewNews},
+                data:{
+                    news:[
+                        {title:'goxcheer'},
+                        {title:'qigaoxiang'}
+                    ]
+                }
+            });
+        </script>
+</body>
+</html>

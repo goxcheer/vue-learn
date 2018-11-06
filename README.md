@@ -31,5 +31,9 @@
 29. 使用vue控制radio单选框
 30. 使用vue控制select
 31. 表单控件处理之表单修饰符number,trim，lazy
+32. Web开发组件之全局组件与局部组件
+33. 子组件data返回独立数据，text/x-template定义子组件样式。
+34. 组件与组件之间通过prop传递数据，:的使用与否
+35. prop多种类型组件验证
 
 

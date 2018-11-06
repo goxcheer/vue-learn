@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+        <div id="viewCMS">
+            <view-News></view-News><br>
+            <view-News></view-News><br>
+            <view-News></view-News>
+        </div>
+        <script type="text/x-template" id="temp1">
+                <div >
+                    <li v-for="(v,k) in news">
+                        {{v.title}}
+                        <button @click="del(k)">删除</button>
+                    </li>
+                </div>
+        </script>
+        <script>
+            var viewNews = {
+                template: '#temp1',
+                data(){
+                    return {
+                        news:[
+                            {title:'goxcheer'},
+                            {title:'qigaoxiang'}
+                        ]
+                    };     //每个子组件返回独立的子组件数据
+                },
+                methods:{
+                    del(k){
+                        this.news.splice(k,1);
+                    }
+                }
+            }
+             new Vue({
+                el:'#viewCMS',
+                data:{
+                    username:'java'
+                },
+                components:{viewNews}
+            });
+        </script>
+</body>
+</html>
