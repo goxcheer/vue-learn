@@ -35,5 +35,10 @@
 33. 子组件data返回独立数据，text/x-template定义子组件样式。
 34. 组件与组件之间通过prop传递数据，:的使用与否
 35. prop多种类型组件验证
+36. foreach  mounted组件初始化调用 $emit子组件调用父组件
+37. 组件.sync和computed结合使用
+38. 内容分发slot
+39. scope定义子组件模板结构
+
 
 

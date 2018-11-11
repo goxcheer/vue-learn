@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+        <div id="viewParent">
+            <view-Child :lists="goods" @sum="countTotal()"></view-Child><br>
+            总价:{{total}}元
+        </div>
+        <script  type="text/x-template" id="temp1">
+            <table style="width: 90%;border: 1px solid">
+                <tr>
+                    <th>名称</th>
+                    <th>价格</th>
+                    <th>数量</th>
+                </tr>
+                <tr v-for="(v,k) in lists">
+                    <th>{{v.title}}</th>
+                    <th>{{v.price}}</th>
+                    <th><input type="number" v-model="v.num" @blur="sum"></th>
+                </tr>
+            </table>
+        </script>
+        <script>
+            var viewChild = {
+                template:'#temp1',
+                props:{
+                    lists:{
+                        type:Array
+                    }
+                },
+                data(){
+                    return {
+
+                    };
+                },
+                methods: {
+                    sum(){
+                        this.$emit('sum');
+                    }
+                }
+            }
+             new Vue({
+                el:'#viewParent',
+                components:{viewChild},
+                 mounted(){
+                    this.countTotal();
+                 },
+                data:{
+                    total:0,
+                    goods:[
+                        {title:'iphone',price:5000,num:1},
+                        {title:'oneplus',price:3000,num:1}
+                    ]
+                },
+                 methods:{
+                    countTotal(){
+                        this.total = 0;
+                        this.goods.forEach((v)=>{
+                            this.total += v.price*v.num;
+                        })
+                    }
+                 }
+            });
+        </script>
+
+
+</body>
+</html>

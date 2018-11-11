@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.js"></script>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+        <div id="view">
+            <form class="form-horizontal">
+            <child-View :lists="news">
+                <template scope="v">
+                    <li >{{v.field.title}}</li>
+                </template>
+            </child-View>
+            </form>
+        </div>
+        <script type="text/x-template" id="bsPanel">
+            <ul>
+                <slot v-for="v in lists" :field="v"></slot>
+            </ul>
+        </script>
+        <script>
+            var childView = {
+                template:'#bsPanel',
+                props:{
+                    lists:{
+                        type:Array
+                    }
+                }
+            }
+             new Vue({
+                el:'#view',
+                 components:{
+                    childView
+
+                 },
+                data:{
+                    news:[
+                        {title:'goxcheer'},
+                        {title:'qigaoxiang'}
+                    ]
+                }
+            });
+        </script>
+</body>
+</html>

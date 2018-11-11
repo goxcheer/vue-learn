@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.js"></script>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+        <div id="view">
+            <form class="form-horizontal">
+            <child-View >
+                <h1 slot="title">php开源框架</h1>
+                <bs-input title="标题" value="goxcheer" slot="body"></bs-input>
+                <bs-input title="点击数" value="100" slot="body"></bs-input>
+            </child-View>
+            </form>
+        </div>
+        <script type="text/x-template" id="bsPanel">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <slot name="title"></slot>
+                    </h3>
+                </div>
+                <div class="panel-body">
+                       <slot name="body"></slot>
+                </div>
+            </div>
+        </script>
+        <script type="text/x-template" id="bsInput">
+            <div class="form-group ">
+                <label class="control-label col-md-2">{{title}}</label>
+                <div class="col-md-10">
+                        <input type="text" class="form-control" :value="value">
+                </div>
+            </div>
+        </script>
+        <script>
+            var childView = {
+                template:'#bsPanel',
+                props:{
+
+                }
+            }
+            var bsInput = {
+                template: '#bsInput',
+                props:['title','value']
+            }
+             new Vue({
+                el:'#view',
+                 components:{
+                    childView,
+                     bsInput
+                 },
+                data:{
+
+                }
+            });
+        </script>
+</body>
+</html>
