@@ -39,6 +39,11 @@
 37. 组件.sync和computed结合使用
 38. 内容分发slot
 39. scope定义子组件模板结构
+40. 使用动态组件灵活设置布局
+41. css过渡动作实例
+42. 使用animated.css动画库实现动画效果
+43. vue-cli初始化单页页面
+    vue-router单页路由
 
 
 

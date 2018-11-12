@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+        <div id="view">
+            <div :is="styleType"></div>
+            <input TYPE="radio" v-model="styleType" value="gxInput">输入框
+            <input type="radio" v-model="styleType" value="gxTextArea">文本域
+        </div>
+        <script>
+            var gxInput = {
+                template:'<div><input/></div>'
+            }
+            var gxTextArea = {
+                template: '<div><textarea></textarea></div>'
+            }
+             new Vue({
+                el:'#view',
+                components:{gxInput,gxTextArea},
+                data:{
+                    styleType:'gxInput'
+                }
+            });
+        </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+        <div id="view">
+            <button @click="type=!type">切换</button>
+            <transition name="gx">
+                <h1 v-if="type">个人博客：blog.goxcheer.com</h1>
+            </transition>
+        </div>
+        <script>
+            var myvue = new Vue({
+                el:'#view',
+                data:{
+                    type:true
+                }
+            });
+        </script>
+    <style type="text/css">
+        .gx-enter,.gx-leave-to{
+            opacity: 0;
+        }
+        .gx-enter-active,.gx-leave-active{
+            transition: all 2ms;
+        }
+
+    </style>
+</body>
+</html>

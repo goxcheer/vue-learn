@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.js"></script>
+    <link href="https://cdn.bootcss.com/animate.css/3.7.0/animate.css" rel="stylesheet">
+</head>
+<body>
+            <div id="view">
+                <button @click="type=!type">切换</button>
+                <transition enter-active-class="animated slideInDown" leave-active-class="animated slideOutRight">
+                    <h1 v-if="type">个人博客：blog.goxcheer.com</h1>
+                </transition>
+            </div>
+            <script>
+                var myvue = new Vue({
+                    el:'#view',
+                    data:{
+                        type:true
+                    }
+                });
+            </script>
+</body>
+</html>

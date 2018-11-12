@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.js"></script>
+    <script src="../vue-router.js"></script>
+</head>
+<body>
+        <div id="view">
+            <router-link to="/php">gxphp</router-link>
+            <router-link to="/cms">gxcms</router-link>
+            <router-view></router-view>
+        </div>
+        <script>
+            const qxphp = {
+                template:'<h1>qxphp</h1>'
+            }
+            const qxcms = {
+                template:'<h1>qxcms</h1>'
+            }
+            let myrouter = new VueRouter({
+                routes: [
+                    {path:'/php',component:qxphp},
+                    {path:'/cms',component:qxcms},
+                    ]
+            });
+             new Vue({
+                el:'#view',
+                router:myrouter
+            });
+        </script>
+</body>
+</html>
