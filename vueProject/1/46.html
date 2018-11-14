@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.js"></script>
+    <script src="../vue-router.js"></script>
+</head>
+<body>
+        <div id="view">
+            <router-view></router-view>
+        </div>
+        <script type="text/x-template" id="content">
+                    <div>
+                        id:{{id}}
+                        <br><button @click="show">显示参数</button>
+                    </div>
+
+        </script>
+        <script>
+            const content = {
+                template:'#content',
+                data(){
+                    return {
+                        id:0
+                    }
+                },
+                mounted(){
+                    this.id = this.$route.params.id;
+                    if (!this.id) {
+                        this.id = 1;
+                    }
+                },
+                methods:{
+                    show(){
+                        console.log(this.$route.params.id);
+                    }
+                }
+            }
+            let routes = [
+                {path:'/content/:id?',component:content}
+            ]
+            let router = new VueRouter({
+                routes
+            });
+             new Vue({
+                el:'#view',
+                data:{
+                },
+                router
+            });
+        </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.js"></script>
+    <script src="../vue-router.js"></script>
+</head>
+<body>
+        <div id="view">
+            <router-view></router-view>
+        </div>
+        <script type="text/x-template" id="home">
+            <div>
+                <li v-for="v in news">
+                    <router-link :to="{name:'content',params:{id:v.id}}">{{v.title}}</router-link>
+                </li>
+                <router-view></router-view>
+            </div>
+        </script>
+        <script type="text/x-template" id="content">
+            <div>
+                    <h1>{{field.title}}</h1>
+                    <p>{{field.content}}</p>
+                <router-link to="/">返回首页</router-link>
+            </div>
+
+        </script>
+        <script>
+            var data = [
+                {id:1,title:'gxphp',content:'php两只黄鹂鸣翠柳'},
+                {id:2,title:'gxVue',content:'vue一行白鹭上青天'}
+            ]
+            const home = {
+                template: '#home',
+                data(){
+                    return {
+                        news:data
+                    }
+                }
+            }
+            const content = {
+                template:'#content',
+                data(){
+                    return {
+                        field:{
+                        }
+                    }
+                },
+                mounted(){
+                   let id = this.$route.params.id;
+                   for (let i = 0 ; i<data.length ; i++) {
+                       if (data[i].id == this.$route.params.id){
+                           this.field = data[i];
+                       }
+                   }
+                }
+            }
+            let routes = [
+                {path:'/',component:home,children:[{path:'/content/:id?',component:content,name:'content'}]}
+            ]
+            let router = new VueRouter({
+                routes
+            });
+             new Vue({
+                el:'#view',
+                data:{
+                },
+                router
+            });
+        </script>
+</body>
+</html>

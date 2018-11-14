@@ -44,6 +44,11 @@
 42. 使用animated.css动画库实现动画效果
 43. vue-cli初始化单页页面
     vue-router单页路由
-
+44. vue-router路由参数随意设置，伪静态路径
+45. vue-router正则表达式之路由参数验证
+46. vue-router路由参数默认值设置技巧
+47. vue-router路由之实例操作新闻列表单页于路由别名
+48. vue-router之路由嵌套使用children
+49. vue-router之使用watch和mounted解决同一组件页面不刷新的问题
 
 
