@@ -20,6 +20,7 @@
                             <td>单价</td>
                             <td>数量</td>
                             <td>合计</td>
+                            <td>操作</td>
                         </tr>
                         <tr v-for="v in goods">
                             <td>{{v.id}}</td>
@@ -27,6 +28,7 @@
                             <td>{{v.price}}</td>
                             <td><input type="number" v-model="v.num"></td>
                             <td>{{v.totalCount}}</td>
+                            <td><button @click="del(v.id)">删除</button></td>
                         </tr>
                     </table>
                     总价：{{totalPrice}}
@@ -55,6 +57,18 @@
                         });
                         return temp;
                     }
+                },
+                mutations:{
+                    del(state,params){
+                        let temp ;
+                       for (let i=0 ; i< state.goods.length ; i++) {
+                           if (state.goods[i].id == params.id) {
+                               temp = i;
+                               break;
+                           }
+                       }
+                       state.goods.splice(temp,1);
+                    }
                 }
             });
             const lists = {
@@ -65,6 +79,11 @@
                     },
                     goods(){
                         return this.$store.getters.goods;
+                    }
+                },
+                methods:{
+                    del(v){
+                        this.$store.commit('del',{v});
                     }
                 }
             }

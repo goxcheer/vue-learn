@@ -54,6 +54,9 @@
 51. vue-router之命名实例的讲解
 52. vue-router之重定向
 53. 配置404页面
+54. vuex之全局变量显示
+    vuex之使用getter高效获取变量数据
+55. vuex之mutations使用方法，this.$。。。。。。commit的使用
 
 
 
