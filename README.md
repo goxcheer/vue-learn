@@ -50,5 +50,10 @@
 47. vue-router路由之实例操作新闻列表单页于路由别名
 48. vue-router之路由嵌套使用children
 49. vue-router之使用watch和mounted解决同一组件页面不刷新的问题
+50. vue-router在js中进行路由跳转
+51. vue-router之命名实例的讲解
+52. vue-router之重定向
+53. 配置404页面
+
 
 

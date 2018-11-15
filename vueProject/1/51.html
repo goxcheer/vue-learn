@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.js"></script>
+    <script src="../vue-router.js"></script>
+</head>
+<body>
+        <div id="view">
+            <router-view></router-view>
+            <router-view name="news"></router-view>
+            <router-view name="slide"></router-view>
+        </div>
+        <script type="text/x-template" id="menu">
+            <div>
+                menu
+            </div>
+        </script>
+        <script type="text/x-template" id="news">
+            <div>
+                    news
+            </div>
+        </script>
+        <script type="text/x-template" id="slide">
+            <div>
+                 slide
+            </div>
+        </script>
+        <script>
+            const menu = {
+                template: '#menu'
+            }
+            const news = {
+                template:'#news'
+
+            }
+            const slide = {
+                template:'#slide'
+
+            }
+            let routes = [
+                {path:'/',components:{
+                    default:menu,
+                        news,slide
+                    }}
+            ]
+            let router = new VueRouter({
+                routes
+            });
+             new Vue({
+                el:'#view',
+                data:{
+                },
+                router
+            });
+        </script>
+</body>
+</html>
